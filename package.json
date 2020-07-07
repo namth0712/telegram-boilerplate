@@ -1,0 +1,55 @@
+{
+  "name": "telegram-boilerplate",
+  "version": "1.0.0",
+  "description": "A highly scalable telegram bot boilerplate",
+  "main": "build/app.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "nodemon",
+    "inspect": "nodemon --inspect src/app.ts",
+    "lint": "npm run lint:js ",
+    "lint:eslint": "eslint --ext .ts",
+    "lint:js": "npm run lint:eslint src/",
+    "lint:fix": "npm run lint:js -- --fix",
+    "start": "node build/app.js"
+  },
+  "keywords": [
+    "cron",
+    "jobs",
+    "js",
+    "javascript",
+    "typescript",
+    "node",
+    "express"
+  ],
+  "license": "MIT",
+  "author": "NamTH",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "get-value": "^3.0.1",
+    "querystring": "^0.2.0",
+    "set-value": "^3.0.2",
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.20",
+    "@types/get-value": "^3.0.1",
+    "@types/node": "^14.0.18",
+    "@types/set-value": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^3.6.0",
+    "@typescript-eslint/parser": "^3.6.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6"
+  }
+}
