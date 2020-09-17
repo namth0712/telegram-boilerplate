@@ -39,13 +39,8 @@ export default async (limit = 0): Promise<Array<Country>> => {
         }
         const listTds = trEl.find('td');
         const countryName = $(listTds[1]).find('a').length
-          ? $(listTds[1])
-              .find('a')
-              .text()
-              .trim()
-          : $(listTds[1])
-              .text()
-              .trim();
+          ? $(listTds[1]).find('a').text().trim()
+          : $(listTds[1]).text().trim();
         if (countryName === 'World') {
           return;
         }
@@ -54,54 +49,15 @@ export default async (limit = 0): Promise<Array<Country>> => {
         const country = {
           index: countryIndex,
           name: countryName,
-          total:
-            parseInt(
-              $(listTds[2])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
-          newCase:
-            parseInt(
-              $(listTds[3])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
-          totalDeath:
-            parseInt(
-              $(listTds[4])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
-          newDeath:
-            parseInt(
-              $(listTds[5])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
-          recovered:
-            parseInt(
-              $(listTds[6])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
-          active:
-            parseInt(
-              $(listTds[8])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
-          totalTest:
-            parseInt(
-              $(listTds[12])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
+          total: parseInt($(listTds[2]).text().replace(/\D/g, '')) || 0,
+          newCase: parseInt($(listTds[3]).text().replace(/\D/g, '')) || 0,
+          totalDeath: parseInt($(listTds[4]).text().replace(/\D/g, '')) || 0,
+          newDeath: parseInt($(listTds[5]).text().replace(/\D/g, '')) || 0,
+          recovered: parseInt($(listTds[6]).text().replace(/\D/g, '')) || 0,
+          active: parseInt($(listTds[8]).text().replace(/\D/g, '')) || 0,
+          totalTest: parseInt($(listTds[12]).text().replace(/\D/g, '')) || 0,
           totalPopulation:
-            parseInt(
-              $(listTds[14])
-                .text()
-                .replace(/\D/g, ''),
-            ) || 0,
+            parseInt($(listTds[14]).text().replace(/\D/g, '')) || 0,
         };
         countries.push(country);
       });

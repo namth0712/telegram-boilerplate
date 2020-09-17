@@ -1,12 +1,11 @@
-import { ContextMessageUpdate } from 'telegraf';
+import { Context } from 'telegraf';
 
 const sendSingleMessage = (
-  ctx: ContextMessageUpdate,
+  ctx: Context,
   message: string,
   isCodeBlock = true,
   extraParams = {},
 ) => {
-  /* eslint-disable @typescript-eslint/camelcase */
   const extra = {
     disable_web_page_preview: true,
     ...extraParams,
@@ -19,7 +18,7 @@ const sendSingleMessage = (
 };
 
 export default (
-  ctx: ContextMessageUpdate,
+  ctx: Context,
   message: string | Array<string>,
   isCodeBlock = false,
   extraParams = {},

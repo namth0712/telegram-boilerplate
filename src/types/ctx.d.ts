@@ -1,6 +1,6 @@
-import { ContextMessageUpdate } from 'telegraf';
+import { Context } from 'telegraf';
 
-export interface MContext extends ContextMessageUpdate {
+export interface MContext extends Context {
   state?: {
     command: {
       raw?: string;

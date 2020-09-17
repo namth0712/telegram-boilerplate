@@ -22,7 +22,7 @@ export default (bot: Telegraf<MContext>) => {
 
     replyMessage(ctx, message);
   });
-  bot.command('corona', async ctx => {
+  bot.command('corona', async (ctx) => {
     sendChatAction(ctx, 'typing');
     const limit = getLimitFromArgs(ctx, 3);
     const listCountries = await getCoronaData(limit);
@@ -34,7 +34,7 @@ export default (bot: Telegraf<MContext>) => {
     let totalActive = 0;
     let totalDeath = 0;
     let totalPopulation = 0;
-    listCountries.map(country => {
+    listCountries.map((country) => {
       let message = '';
       if (messages.length) {
         message += '\n';
@@ -67,7 +67,7 @@ export default (bot: Telegraf<MContext>) => {
     replyMessage(ctx, messages);
   });
 
-  bot.command('coronastats', async ctx => {
+  bot.command('coronastats', async (ctx) => {
     sendChatAction(ctx, 'typing');
     const listCountries = await getCoronaData();
     if (!listCountries.length) {
@@ -77,7 +77,7 @@ export default (bot: Telegraf<MContext>) => {
     let totalActive = 0;
     let totalDeath = 0;
     let totalPopulation = 0;
-    listCountries.map(country => {
+    listCountries.map((country) => {
       total += country.total;
       totalActive += country.active;
       totalDeath += country.totalDeath;
@@ -95,14 +95,14 @@ export default (bot: Telegraf<MContext>) => {
     replyMessage(ctx, message);
   });
 
-  bot.command('coronavn', async ctx => {
+  bot.command('coronavn', async (ctx) => {
     sendChatAction(ctx, 'typing');
     const listCountries = await getCoronaData();
     let message = '';
     if (!listCountries.length) {
       return replyMessage(ctx, 'System error, please try again later.');
     }
-    listCountries.map(country => {
+    listCountries.map((country) => {
       if (country.name === 'Vietnam') {
         message += `[${country.index}] - <b>${
           country.name

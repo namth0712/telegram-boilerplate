@@ -27,8 +27,8 @@ export default async ({
           ...extraHeaders,
         },
       })
-      .then(res => res.data)
-      .catch(error => {
+      .then((res) => res.data)
+      .catch((error) => {
         throw error.message ? error.message : `${url} error`;
       });
   } else {
@@ -43,8 +43,8 @@ export default async ({
         },
         ...options,
       })
-      .then(res => res.data)
-      .catch(error => {
+      .then((res) => res.data)
+      .catch((error) => {
         throw error.message ? error.message : `${url} error`;
       });
   }

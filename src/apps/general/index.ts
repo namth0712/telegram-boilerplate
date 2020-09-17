@@ -1,8 +1,8 @@
 import { replyMessage } from '../../utils';
-import Telegraf, { ContextMessageUpdate } from 'telegraf';
+import Telegraf, { Context } from 'telegraf';
 
-export default (bot: Telegraf<ContextMessageUpdate>) => {
-  bot.command('help', ctx => {
+export default (bot: Telegraf<Context>) => {
+  bot.command('help', (ctx) => {
     let message = '';
     message += 'Welcom to Telegram Bot';
     message += `
@@ -17,7 +17,7 @@ export default (bot: Telegraf<ContextMessageUpdate>) => {
 `;
     replyMessage(ctx, message);
   });
-  bot.command('myid', ctx => {
+  bot.command('myid', (ctx) => {
     let message = '';
     message += `ID: ${ctx.update.message.from.id}\n`;
     message += `Username: ${ctx.update.message.from.username}\n`;
@@ -25,7 +25,7 @@ export default (bot: Telegraf<ContextMessageUpdate>) => {
     replyMessage(ctx, message, true);
   });
 
-  bot.command('chatid', ctx => {
+  bot.command('chatid', (ctx) => {
     let message = '';
     message += `ID: ${ctx.update.message.from.id}\n`;
     message += `Title: ${ctx.update.message.chat.title}\n`;

@@ -1,8 +1,8 @@
-import { ContextMessageUpdate } from 'telegraf';
+import { Context } from 'telegraf';
 import sendMessage from './sendMessage';
 
 export default (
-  ctx: ContextMessageUpdate,
+  ctx: Context,
   message: string | Array<string>,
   isCodeBlock = false,
   extraParams = {},
