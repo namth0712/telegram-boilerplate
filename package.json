@@ -31,7 +31,7 @@
     "errorhandler": "^1.5.1",
     "get-value": "^3.0.1",
     "querystring": "^0.2.0",
-    "set-value": "^3.0.2",
+    "set-value": "^4.0.1",
     "telegraf": "^3.38.0"
   },
   "devDependencies": {
